@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
-import { useState, createContext } from 'react'
+import { createContext } from 'react'
 import List from './routes/List'
 
 import { Home } from './routes/Home'
+import { useUniqueGenerator } from './hook/useUniqueGenerator'
 
 export const AppContext = createContext(null)
 
@@ -19,9 +20,10 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  const [state, setState] = useState(null)
+  const {filterUniqueIds} = useUniqueGenerator()
+
   return (
-    <AppContext.Provider value={{ state, setState }}>
+    <AppContext.Provider value={{ filterUniqueIds }}>
       <RouterProvider router={router} />
     </AppContext.Provider>
   )

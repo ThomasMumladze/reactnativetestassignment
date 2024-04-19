@@ -1,0 +1,20 @@
+.list-wrapper{
+    display:flex;
+    gap: 25px;
+    flex-wrap:wrap;
+
+ 
+}
+
+.items{
+    align-items: center;
+    gap:5px;
+    display:flex
+
+
+}
+
+.items span {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
